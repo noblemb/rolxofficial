@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a1018" />
+  <meta name="description" content="RolxOfficial — latest VALORANT and Minecraft updates, plus RolxOfficial YouTube live status." />
+  <title>RolxOfficial — Gaming Updates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <header class="topbar glass">
+    <a class="brand" href="#home" aria-label="RolxOfficial home">
+      <span class="brand-mark">R</span>
+      <span>ROLX<span class="accent">OFFICIAL</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#updates">Updates</a>
+      <a href="#live">Live</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="youtube-pill" href="https://www.youtube.com/@RolxOfficial" target="_blank" rel="noreferrer">
+      <span class="yt-dot"></span> YouTube
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> GAMING INTEL • ALWAYS UPDATED</div>
+        <h1>ENTER THE<br><span>ROLX</span> GRID.</h1>
+        <p>Your command center for fresh <strong>VALORANT</strong> and <strong>Minecraft</strong> updates — plus a quick look at whether RolxOfficial is live on YouTube.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#updates">Explore Updates <span>↗</span></a>
+          <a class="btn btn-ghost" href="#live">Check Live Status</a>
+        </div>
+      </div>
+
+      <div class="hero-panel glass">
+        <div class="panel-head">
+          <span>NETWORK STATUS</span>
+          <span class="pulse-dot"></span>
+        </div>
+        <div class="stat-row"><span>VALORANT FEED</span><strong>ONLINE</strong></div>
+        <div class="stat-row"><span>MINECRAFT FEED</span><strong>ONLINE</strong></div>
+        <div class="stat-row"><span>ROLX LIVE</span><strong id="miniLive">CHECKING</strong></div>
+        <div class="scanner"><i></i></div>
+      </div>
+
+      <div class="scroll-cue">SCROLL TO SYNC <span>↓</span></div>
+    </section>
+
+    <section class="section updates-section" id="updates">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">LATEST INTEL</p>
+          <h2>Game Updates</h2>
+        </div>
+        <div class="tabs glass" role="tablist" aria-label="Game filters">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="valorant">Valorant</button>
+          <button class="tab" data-filter="minecraft">Minecraft</button>
+        </div>
+      </div>
+
+      <div class="featured-grid">
+        <article class="feature-card valorant glass">
+          <div class="feature-icon v-icon">V</div>
+          <div>
+            <span class="tag">VALORANT</span>
+            <h3>Riot patch notes, map rotations, agents & competitive changes.</h3>
+            <a href="https://playvalorant.com/en-us/news/game-updates/" target="_blank" rel="noreferrer">Official Riot updates ↗</a>
+          </div>
+        </article>
+        <article class="feature-card minecraft glass">
+          <div class="feature-icon m-icon">M</div>
+          <div>
+            <span class="tag">MINECRAFT</span>
+            <h3>Game drops, Java snapshots, Bedrock previews & release news.</h3>
+            <a href="https://www.minecraft.net/en-us/articles" target="_blank" rel="noreferrer">Official Minecraft news ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="updates-meta">
+        <span id="syncText">Syncing official feeds...</span>
+        <button id="refreshBtn" class="refresh-btn">↻ Refresh</button>
+      </div>
+      <div class="cards-grid" id="updatesGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section live-section" id="live">
+      <div class="live-card glass">
+        <div class="live-visual">
+          <div class="rings"><i></i><i></i><i></i></div>
+          <div class="live-orb" id="liveOrb"><span>R</span></div>
+        </div>
+        <div class="live-copy">
+          <p class="kicker">ROLXOFFICIAL / YOUTUBE</p>
+          <h2>Stream Status</h2>
+          <div class="live-status-line">
+            <span class="status-light" id="statusLight"></span>
+            <strong id="liveStatus">Checking channel...</strong>
+          </div>
+          <p id="liveDescription">This page never plays the stream automatically. When you are live, viewers can jump directly to YouTube.</p>
+          <a id="liveButton" class="btn btn-primary" href="https://www.youtube.com/@RolxOfficial" target="_blank" rel="noreferrer">Open RolxOfficial on YouTube <span>↗</span></a>
+        </div>
+        <div class="live-code" aria-hidden="true">
+          <span>CHANNEL</span><b>@ROLXOFFICIAL</b>
+          <span>MODE</span><b>EXTERNAL PLAYBACK</b>
+          <span>CHECK</span><b id="lastCheck">AUTO</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="about-card glass">
+        <p class="kicker">ABOUT THE HUB</p>
+        <h2>Built for players who want the signal, not the noise.</h2>
+        <p>RolxOfficial brings together official update links for Riot Games' VALORANT and Mojang Studios' Minecraft in one dark, responsive gaming interface inspired by the crimson-and-charcoal palette you supplied.</p>
+        <div class="about-stats">
+          <div><strong>2</strong><span>GAME FEEDS</span></div>
+          <div><strong>1</strong><span>LIVE CHECK</span></div>
+          <div><strong>24/7</strong><span>RESPONSIVE UI</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">R</span><span>ROLX<span class="accent">OFFICIAL</span></span></a>
+    <p>Community gaming hub. VALORANT is a Riot Games trademark. Minecraft is a Mojang/Microsoft trademark.</p>
+    <a href="https://www.youtube.com/@RolxOfficial" target="_blank" rel="noreferrer">@RolxOfficial ↗</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
